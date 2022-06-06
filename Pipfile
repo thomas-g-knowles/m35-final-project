@@ -8,6 +8,7 @@ python-dotenv = "*"
 "google.auth" = "*"
 google-api-python-client = "*"
 qrcode = "*"
+pillow = "*"
 
 [dev-packages]
 
