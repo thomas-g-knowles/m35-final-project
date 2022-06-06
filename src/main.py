@@ -1,3 +1,5 @@
+# TODO : BUG where phone gets stuck on validation in setup stage - think it's my code because the other code I wrote still works.
+
 # Imports package to manage .env info:
 from dotenv import load_dotenv
 # Imports OS to assist management of .env file:
