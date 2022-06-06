@@ -15,18 +15,22 @@
 
 - Task 2 - App/APK install:
   - For part two of the task, I discovered that this could be achieved using the Android developed ADB (Android Debug Bridge). Therefore, also included in my repo is the Android devloped ADB (Android Debug Bridge) command line tool, used for performing a multitude of actions on Android devices such as traversing through a phones directories, executing commands (e.g. installing apps) and more.
-  - I successfully installed an APK through the execution of the following commands in command line (cmd opened in same folder as adb.exe so it can be found implicitly) and by connecting the Android device to the PC via USB (note regarding the USB, some cables will NOT work, it may have to be brand specific? I had this issue however swapping to a different cable worked):
+  - I successfully installed an APK through the execution of the following commands in command line (cmd opened in same folder as adb.exe so it can be found implicitly) and by connecting the Android device to the PC via USB (note regarding the USB, some cables will NOT work, it may have to be brand specific? I had this issue, however swapping to a different cable worked):
     - adb ===>>> not strictly neccessary, however checks for install/executable of ADB
     - adb devices ===>>> not strictly neccessary, however can assist in establishing connection to phone.
-    - adb install WhatsApp.apk ===>>> adb install *path to apk file*
+    - adb install WhatsApp.apk ===>>> adb install ***path* to apk file**
   - Note that I have wrote a batch script which does this hassle free (included in ADB), just run it and the APK (I chose WhatsApp) will be installed.
 
 ## Authentication:
 
-#### For the authentication, I have chosen to use a .env file to store variables with sensitive information in them (included in the .gitignore), therefore to adapt the code in main.py for yourself simply just modify the supplied "template.env" file filling in the blanks and rename the file to just ".env" when finished. The first three variable names refer to your/a Google Cloud Project's details, one can be setup on the platform using the web GUI/console.
+For the authentication, I have chosen to use a .env file to store variables with sensitive information in them (included in the .gitignore), therefore to adapt the code in main.py for yourself simply just modify the supplied "template.env" file filling in the blanks and rename the file to just ".env" when finished. The first three variable names refer to your/a Google Cloud Project's details, one can be setup on the platform using the web GUI/console.
+
+Note: replace <> and text inside it with relevant fields, e.g. "POLICY_PATH = enterprises/<enterprise_name>/policies/" would become "POLICY_PATH = enterprises/my_enterprise/policies/"
+
+- https://cloud.google.com/
 
 ## Nerdy Stuff (extra info):
 
 - Project was built in Python (version 3.10) due to overall accessibility and existing documentation from Google's API resources - I am also incredibily familiar with Python and its syntax.
 - Furthermore, there were mutliple techniques I could have used to achieve the device enrollment procedure, however I went down the root of utilising Google's Android Management API.
-- I also prefer to develop in virtual environments for Python, choosing to use pipenv (built in venv and package manager) and so all required packages are stored in Pipfile and can be installed using pipenv install in same directory.
+- I also prefer to develop in virtual environments for Python, choosing to use pipenv (built in venv and package manager) and so all required packages are stored in Pipfile and can be installed using "**pipenv install**" command in terminal, in same directory.
