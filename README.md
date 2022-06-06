@@ -15,10 +15,11 @@
 
 - Task 2 - App/APK install:
   - For part two of the task, I discovered that this could be achieved using the Android developed ADB (Android Debug Bridge). Therefore, also included in my repo is the Android devloped ADB (Android Debug Bridge) command line tool, used for performing a multitude of actions on Android devices such as traversing through a phones directories, executing commands (e.g. installing apps) and more.
-  - I successfully installed an APK through the execution of the following commands in command line and by connecting the Android device to the PC via USB (note regarding the USB, some cables will NOT work, it may have to be brand specific? I had this issue however swapping to a different cable worked):
+  - I successfully installed an APK through the execution of the following commands in command line (cmd opened in same folder as adb.exe so it can be found implicitly) and by connecting the Android device to the PC via USB (note regarding the USB, some cables will NOT work, it may have to be brand specific? I had this issue however swapping to a different cable worked):
     - adb ===>>> not strictly neccessary, however checks for install/executable of ADB
     - adb devices ===>>> not strictly neccessary, however can assist in establishing connection to phone.
-    - adb install *path to apk file* ===>>> example adb install
+    - adb install WhatsApp.apk ===>>> adb install *path to apk file*
+  - Note that I have wrote a batch script which does this hassle free (included in ADB), just run it and the APK (I chose WhatsApp) will be installed.
 
 ## Nerdy Stuff (extra info):
 
