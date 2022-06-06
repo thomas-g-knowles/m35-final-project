@@ -6,7 +6,7 @@
 
 - The final project is based around the Android device ecosystem and more specifically device enrollment to streamline the device setup process + APK/application install on Android devices.
 - In layman's terms, the device setup wizard needs to be skipped by scanning a QR code to take the user to the home screen of the device and once the device is setup an application needs to be sideloaded onto the phone.
-- This repository and README contain all the required files and instructions to acheive the above (excluding authentication).
+- This repository and README contain all the required files (excluding .env (auth) and packages, use pipenv install) and instructions to acheive the above.
 
 ## How to Use:
 
@@ -20,6 +20,10 @@
     - adb devices ===>>> not strictly neccessary, however can assist in establishing connection to phone.
     - adb install WhatsApp.apk ===>>> adb install *path to apk file*
   - Note that I have wrote a batch script which does this hassle free (included in ADB), just run it and the APK (I chose WhatsApp) will be installed.
+
+## Authentication:
+
+#### For the authentication, I have chosen to use a .env file to store variables with sensitive information in them (included in the .gitignore), therefore to adapt the code in main.py for yourself simply just modify the supplied "template.env" file filling in the blanks and rename the file to just ".env" when finished. The first three variable names refer to your/a Google Cloud Project's details, one can be setup on the platform using the web GUI/console.
 
 ## Nerdy Stuff (extra info):
 
