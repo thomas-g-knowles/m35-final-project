@@ -16,11 +16,11 @@
 - Task 2 - App/APK install:
   - For part two of the task, I discovered that this could be achieved using the Android developed ADB (Android Debug Bridge). Therefore, also included in my repo is the Android devloped ADB (Android Debug Bridge) command line tool, used for performing a multitude of actions on Android devices such as traversing through a phones directories, executing commands (e.g. installing apps) and more.
   - I successfully installed an APK through the execution of the following commands in command line and by connecting the Android device to the PC via USB (note regarding the USB, some cables will NOT work, it may have to be brand specific? I had this issue however swapping to a different cable worked):
-    - adb (launches command line tool/CLI)
-    - adb devices (not strictly neccessary, however can assist in establishing connection to phone)
-    - adb install *path to apk file* ===>>> example adb install 
+    - adb ===>>> not strictly neccessary, however checks for install/executable of ADB
+    - adb devices ===>>> not strictly neccessary, however can assist in establishing connection to phone.
+    - adb install *path to apk file* ===>>> example adb install
 
-## Nerdy stuff (extra info):
+## Nerdy Stuff (extra info):
 
 - Project was built in Python (version 3.10) due to overall accessibility and existing documentation from Google's API resources - I am also incredibily familiar with Python and its syntax.
 - Furthermore, there were mutliple techniques I could have used to achieve the device enrollment procedure, however I went down the root of utilising Google's Android Management API.
