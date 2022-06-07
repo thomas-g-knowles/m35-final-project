@@ -1,11 +1,9 @@
-# TODO : BUG where phone gets stuck on validation in setup stage - think it's my code because the other code I wrote still works.
-
 # Imports package to manage .env info:
 from dotenv import load_dotenv
 # Imports OS to assist management of .env file:
 import os
 # Imports self made class to create enrollment token:
-from android_enrollment import deviceEnroller
+from android_enrollment import deviceEnroler
 
 if __name__ == "__main__":
   print("\n------------ QR Code Enrollment Generator Started ------------\n")
@@ -18,10 +16,10 @@ if __name__ == "__main__":
   wifi_info: dict = {"ssid": os.environ.get("WIFI_SSID"), "password": os.environ.get("WIFI_PASSWORD"), "security": os.environ.get("WIFI_SECURITY")}
 
   # Instantiating QRCode object:
-  enroller_instance = deviceEnroller(auth_path, debug=True)
+  enroller_instance = deviceEnroler(auth_path, debug=True)
 
   # Creates the specified policy if it cannot be found:
-  enroller_instance.patch_policy(policy_path, "temp", {"applications": [{"installType": "FORCE_INSTALLED", "packageName": "com.sega.sonic"}, {"installType": "FORCE_INSTALLED", "packageName": "com.sega.sonic1"}, {"installType": "FORCE_INSTALLED", "packageName": "com.sega.sonic1px"}, {"installType": "FORCE_INSTALLED", "packageName": "com.yodo1.crossyroad"}]})
+  enroller_instance.patch_policy(policy_path, "temp", {"applications": [{"installType": "FORCE_INSTALLED", "packageName": "com.sega.sonic"}, {"installType": "FORCE_INSTALLED", "packageName": "com.yodo1.crossyroad"}]})
 
   # Generates the enrollment token:
   enroller_instance.policy_tokenization(enterprise_path, policy_path, "temp")

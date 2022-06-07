@@ -34,3 +34,4 @@ Note: replace <> and text inside it with relevant fields, e.g. "POLICY_PATH = en
 - Project was built in Python (version 3.10) due to overall accessibility and existing documentation from Google's API resources - I am also incredibily familiar with Python and its syntax.
 - Furthermore, there were mutliple techniques I could have used to achieve the device enrollment procedure, however I went down the root of utilising Google's Android Management API.
 - I also prefer to develop in virtual environments for Python, choosing to use pipenv (built in venv and package manager) and so all required packages are stored in Pipfile and can be installed using "**pipenv install**" command in terminal, in same directory.
+- In regards to app installation onto a phone, I found a way of specifying a list of apps to be downloaded automatically upon completion of device setup and so I decided to implement this as well as the APK sideloader.

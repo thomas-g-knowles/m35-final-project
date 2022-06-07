@@ -6,8 +6,8 @@ from urllib.parse import urlencode
 import webbrowser
 import qrcode
 
-class deviceEnroller:
-  '''Creates an object from class deviceEnroller, used for provisioning and enrolling an android device. deviceEnroller object has all methods needed to create an enrollment token.'''
+class deviceEnroler:
+  '''Creates an object from class deviceEnroler, used for provisioning and enrolling an android device. deviceEnroler object has all methods needed to create an enrollment token.'''
 
   def __init__(self: object, auth_path: str, debug: bool = False):
     self.auth_path: str = auth_path
@@ -48,7 +48,7 @@ class deviceEnroller:
   def policy_tokenization(self: object, enterprise_path: str, policy_path: str, policy_choice: str):
     '''Generates an enrollment token from the discovery API. Note that it indexes and returns only the QR code portion (only required section).'''
 
-    self.enrollment_token: dict = self.androidmanagement.enterprises().enrollmentTokens().create(parent=enterprise_path, body={"policyName": policy_path+"policy"+policy_choice}).execute()["qrCode"]
+    self.enrollment_token: dict = self.androidmanagement.enterprises().enrollmentTokens().create(parent=enterprise_path, body={"policyName": policy_path+policy_choice}).execute()["qrCode"]
 
     if self.debug:
       print(f"- Enrollment token generated: \n{self.enrollment_token}")
@@ -65,7 +65,7 @@ class deviceEnroller:
     self.enrollment_token = json.dumps(self.enrollment_token)
 
     if self.debug:
-      print("- Token injection succeeded")
+      print("- Token injection succeeded\n", self.enrollment_token)
 
 
   def generate_url(self: object):
@@ -97,3 +97,4 @@ class deviceEnroller:
 
     if self.debug:
       print("Local QR code PNG generated.")
+

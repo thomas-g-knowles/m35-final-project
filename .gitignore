@@ -130,3 +130,7 @@ dmypy.json
 
 # auth
 .env
+
+# QR code image:
+
+qrcode.png
